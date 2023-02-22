@@ -21,5 +21,6 @@
     "title": "弹窗名",
     "content": "i like ccw",
     "icon": "https://m.ccw.site/community/images/logo-ccw.png",
-    "saveJSON": "将客户端信息覆盖到列表 [listArgs]"
+    "saveJSON": "将客户端信息覆盖到列表 [listArgs]",
+    "upb64": "测试积木"
 }

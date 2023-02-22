@@ -2,7 +2,7 @@
  * @Author: YUEN
  * @Date: 2023-02-06 20:52:52
  * @LastEditors: YUEN
- * @LastEditTime: 2023-02-21 19:32:57
+ * @LastEditTime: 2023-02-22 14:53:38
  * @Description:
  */
 import {
@@ -485,8 +485,11 @@ export default class SimpleUtils extends GandiExtension {
     DEPLOY_ENV.setText("deploy_env");
     DEPLOY_ENV.setArguments({});
 
-    const X = BlockUtil.createArgument(ArgumentType.NUMBER, 55);
-    const Y = BlockUtil.createArgument(ArgumentType.NUMBER, 36);
+    const upb64 = BlockUtil.createCommand();
+    upb64.setOpcode("upb64");
+    upb64.setText("upb64");
+    upb64.setArguments({})
+
     /**
      * 基础功能区
      */
@@ -498,6 +501,7 @@ export default class SimpleUtils extends GandiExtension {
      */
     this.addBlock(GET_CLIENT_INFO);
     this.addBlock(saveJSON);
+    this.addBlock(upb64);
 
     /**
      * 基础功能-一分区
@@ -521,13 +525,28 @@ export default class SimpleUtils extends GandiExtension {
   //block opcode functions
 
   /**
+   * 上传文件转换base64
+   * v1.0.5
+   */
+
+  upb64(args, utils) {
+    console.log("YUEN TESTING Start");
+    console.log(args);
+    console.log(utils);
+    console.log(window);
+    console.log(window.navigator);
+    console.log(window.Navigator);
+    console.log("YUEN TESTING End");
+  }
+
+  /**
    * 保存客户端信息到列表
    * v1.0.4
    */
 
   saveJSON(args, utils) {
     /**
-     * s = StringJSON ClientInfo
+     * s = StringJSON client_info
      * ss = JSONObj s
      * sss = ["Edge","109.x.x","Windows","10/11","PC","x64"]
      * 这里变量有点乱
