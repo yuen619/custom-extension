@@ -1,10 +1,3 @@
-/*
- * @Author: YUEN
- * @Date: 2023-06-11 20:46:12
- * @LastEditors: YUEN
- * @LastEditTime: 2023-06-12 14:26:25
- * @Description: 
- */
 import zhCn from './l10n/zh-cn.json';
 import en from './l10n/en.json';
 import cover from './assets/cover.png';
